@@ -1,4 +1,4 @@
-from principal.models import Persona
+from principal.models import Persona, historial, comentario
 from django.contrib import admin
 
 admin.site.register(Persona)

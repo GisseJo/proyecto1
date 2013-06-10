@@ -1,3 +1,4 @@
+#encoding:utf-8
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -17,7 +18,7 @@ class historial(models.Model):
 	tiempo_de_registro = models.DateTimeField(auto_now=True)
 	usuario = models.ForeignKey(User)
 
-	def __unicode__():
+	def __unicode__(self):
 		return self.ideal_personal
 
 class comentario (models.Model):
