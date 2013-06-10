@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+	<title>Lista de personas de ejemplo</title>
+	<meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Personas</h1>
+	{% for elemento in lista %}
+	<ul>
+	  <li><strong>{{elemento.nombre}}</strong></li>
+	  <li>{{elemento.apellido}}</li>
+	  <li>{{elemento.CI}}</li>
+	</ul>
+	{% endfor %}
+  </body>
+</html>

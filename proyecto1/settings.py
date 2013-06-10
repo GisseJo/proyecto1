@@ -3,7 +3,7 @@
 
 # Identificando la ruta del proyecto
 import os
-RUTA_PROYECTO = os.path.dirname(os.path.realpath(__file__))
+RUTA_PROYECTO= os.path.dirname(os.path.realpath(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -114,6 +114,8 @@ ROOT_URLCONF = 'proyecto1.urls'
 WSGI_APPLICATION = 'proyecto1.wsgi.application'
 
 TEMPLATE_DIRS = (
+    os.path.join(RUTA_PROYECTO, 'plantillas'),
+
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
