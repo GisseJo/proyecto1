@@ -114,7 +114,7 @@ ROOT_URLCONF = 'proyecto1.urls'
 WSGI_APPLICATION = 'proyecto1.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(RUTA_PROYECTO, 'plantillas'),
+    os.path.join(RUTA_PROYECTO, 'Plantillas'),
 
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
