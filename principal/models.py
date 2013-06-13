@@ -22,8 +22,6 @@ class historial(models.Model):
 		return self.ideal_personal
 
 class comentario (models.Model):
-	historial = models.ForeignKey(historial)
-	texto = models.TextField(help_text='Escribi pues algo', verbose_name='comentario')
 
 	def __unicode__(self):
 		return self.texto
