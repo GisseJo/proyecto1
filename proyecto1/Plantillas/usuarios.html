@@ -10,14 +10,20 @@
 	</nav>
 </header>
 <section>
-	<h1> Historial</h1>
-	<p> Historial de Vida </p>
+	<h1> Usuarios</h1>
+	<p> Los que usan nuestro app </p>
 	<ul>
-	{% for dato in Historial %}
-	<li> {{dato.ideal_personal}}</li>
+	{% for dato in usuarios %}
+	<li> {{dato.username}}- <em>{{dato.email}}</em>
+		<ul>
+			{%for hist in historiales%}
+			{%if hist.usuario = dato %}
+			<li>{{hist}}</li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+	</li>
 	{% endfor %}
 	</ul>
-	
-	
 </section>
 	

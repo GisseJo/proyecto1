@@ -13,11 +13,10 @@
 	<h1> Historial</h1>
 	<p> Historial de Vida </p>
 	<ul>
-	{% for dato in Historial %}
-	<li> {{dato.ideal_personal}}</li>
+	{% for dato in historiales %}
+	<li> 
+			<a href='/historial/{{dato.id}}'>{{dato.ideal_personal}}</a><br>
+			<img src='{{MEDIA_URL}}{{dato.imagen_de_perfil}}'
+	</li>
 	{% endfor %}
 	</ul>
-	
-	
-</section>
-	

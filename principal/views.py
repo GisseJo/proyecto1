@@ -17,5 +17,21 @@ def sobre(request):
 def	inicio(request):
 	Historial= historial.objects.all()
 	return render_to_response('inicio.html',{'Historial':Historial})
+
+def usuarios (request):
+	usuarios=User.objects.all()
+	historiales=historial.objects.all()
+	return  render_to_response('usuarios.html',{'usuarios':usuarios, 'historiales':historiales})
+
+
+def lista_historial(request):
+	historiales= historial.objects.all()
+	return render_to_response('historiales.html',{'historiales':historiales}, context_instance=RequestContext(request))	
 	
+def	detalle_historial(request, id_historial):
+	dato= get_object_or_404(historial, pk=id_historial)
+	comentario= comentario.objects.filter(receta=dato)
+	return render_to_response('historial.html',{'receta':dato, 'comentario':comentarios},context_instance=RequestContext(request) )
+	
+
 	

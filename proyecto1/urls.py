@@ -8,8 +8,10 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT,}
-    ),
+    ),# visualizar la imagenes poniendo /media/fotos/imagen
     url(r'^sobre/$','principal.views.sobre'),
-    url(r'^$','principal.views.inicio'),                    
-    
+    url(r'^$','principal.views.inicio'), 
+    url(r'^usuarios/$','principal.views.usuarios'),                   
+    url(r'^historiales/$','principal.views.lista_historial'),
+    url(r'^historial/(?P<id_receta>\d+)$', principal.views.detalle_historial)
 )
