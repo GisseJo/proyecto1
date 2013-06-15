@@ -1,0 +1,21 @@
+<html>
+<header>
+	<nav>
+		<ul>
+			<li><a href='/'>Inicio</a></li>
+			<li><a href='/usuarios'>Usuarios registrados</a></li>
+			<li><a href='/historial'>Historiales</a></li>
+			<li><a href='/sobre'>Sobre</a></li>
+		</ul>
+	</nav>
+</header>
+<section>
+ <h1>Prueba de Proyecto1</h1>
+ <p>Los historiales que tenemos</p>
+ <ul>
+{% for dato in historials %}
+  <li>{{dato.ideal_personal}}</li>
+{% endfor %}
+ </ul>
+</section> 
+</html
