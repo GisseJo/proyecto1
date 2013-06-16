@@ -1,0 +1,28 @@
+<html>
+<header>
+	<nav>
+		<ul>
+			<li><a href='/'>Inicio</a></li>
+			<li><a href='/usuarios'>Usuarios registrados</a></li>
+			<li><a href='/historial'>Historiales</a></li>
+			<li><a href='/sobre'>Sobre</a></li>
+		</ul>
+	</nav>
+</header>
+<section>
+ <h1>Ususarios</h1>
+ <p>Estos son los usuarios</p>
+ <ul>
+{% for dato in usuarios %}
+  <li>{{dato.username}}<em>{{dato.email}}</em></li>
+  	<ul>
+  		{% for item in historiales %}
+  			{% if item.usuario == dato %}
+  				<li>{{item}}</li>
+  			{% endif %}
+  		{% endfor %}
+  	</ul>
+{% endfor %}
+ </ul>
+</section> 
+</html>

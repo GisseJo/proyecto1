@@ -10,4 +10,5 @@ urlpatterns = patterns('',
     ),
     url(r'^sobre/$','principal.views.sobre'),
     url(r'^$','principal.views.inicio'),
+    url(r'^usuarios/$','principal.views.usuarios'),
 )

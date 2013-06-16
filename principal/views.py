@@ -14,3 +14,8 @@ def sobre(request):
 def inicio(request):
 	historials = historial.objects.all()
 	return render_to_response('inicio.html',{'historials':historials})
+
+def usuarios (request):
+	usuarios= User.objects.all()
+	historiales = historial.objects.all()
+	return render_to_response('usuarios.html',{'usuarios':usuarios,'historiales':historiales })
