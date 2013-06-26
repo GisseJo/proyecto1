@@ -13,5 +13,5 @@ urlpatterns = patterns('',
     url(r'^$','principal.views.inicio'), 
     url(r'^usuarios/$','principal.views.usuarios'),                   
     url(r'^historiales/$','principal.views.lista_historial'),
-    url(r'^historial/(?P<id_receta>\d+)$', principal.views.detalle_historial)
+    url(r'^historial/(?P<id_receta>\d+)$', 'principal.views.detalle_historial')
 )
