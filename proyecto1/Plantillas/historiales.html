@@ -1,0 +1,23 @@
+<html>
+<header>
+	<nav>
+		<ul>
+			<li><a href='/'>Inicio</a></li>
+			<li><a href='/usuarios'>Usuarios registrados</a></li>
+			<li><a href='/historial'>Historiales</a></li>
+			<li><a href='/sobre'>Sobre</a></li>
+		</ul>
+	</nav>
+</header>
+<section>
+<h1>Nuestras historial</h1>
+<ul>
+	{% for dato in datos %}
+	<li>
+		<a href='/historial/{{dato.id}}'>{{dato.ideal_personal}}</a><br>
+		<img alt="" src='{{MEDIA_URL}}{{dato.imagen}}'>
+	</li>
+	{% endfor %}
+</ul>	
+
+</section>

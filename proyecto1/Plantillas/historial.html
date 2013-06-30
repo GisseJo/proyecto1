@@ -1,0 +1,35 @@
+<html>
+<header>
+	<nav>
+		<ul>
+			<li><a href='/'>Inicio</a></li>
+			<li><a href='/usuarios'>Usuarios registrados</a></li>
+			<li><a href='/historial'>Historiales</a></li>
+			<li><a href='/sobre'>Sobre</a></li>
+		</ul>
+	</nav>
+</header>
+<section>
+ <h1>{{historial.ideal_personal}}</h1>
+ 
+ <div id= 'nombre_de_grupo'>
+ 	<h2>Nombre de Grupo</h2>
+ 	<p>{{historial.nombre_de_grupo}}</p>
+ </div>
+ <div id= 'historia'>
+ 	<h2>Historia</h2>
+ 	<p>{{historial.historia}}</p>
+ </div>
+ <div id='referencia'>
+ 	<img src='{{MEDIA_URL}}{{historial.imagen}}'>
+ </div>
+ <div id='comentarios'>
+ <h2>Comentarios</h2>
+ 	{% for item in comentarios %}
+ 		<p> {{item.texto}} </p>
+ 	{% empty %}
+ 		<p> Sin comentarios Registrados </p>
+ 	{% endfor %} 
+  </div>
+</section> 
+</html>
