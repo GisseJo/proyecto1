@@ -1,16 +1,11 @@
-<html>
-<header>
-	<nav>
-		<ul>
-			<li><a href='/'>Inicio</a></li>
-			<li><a href='/usuarios'>Usuarios registrados</a></li>
-			<li><a href='/historial'>Historiales</a></li>
-			<li><a href='/sobre'>Sobre</a></li>
-		</ul>
-	</nav>
-</header>
-<section>
- <h1>{{historial.ideal_personal}}</h1>
+{% extends 'base.html' %}
+
+{% block encabezado %}
+	<h1>{{historial.ideal_personal| tittle}}</h1>
+{% endblock %}
+
+
+{% block contenido %}
  
  <div id= 'nombre_de_grupo'>
  	<h2>Nombre de Grupo</h2>
@@ -31,5 +26,9 @@
  		<p> Sin comentarios Registrados </p>
  	{% endfor %} 
   </div>
-</section> 
-</html>
+<footer>
+
+<p> Registrado {{historial.tiempo_de_registro| date:'SHORT_DATETIME_FORMAT'}} por {{historial.usuario}}</p>
+</footer>
+
+{% endblock %}

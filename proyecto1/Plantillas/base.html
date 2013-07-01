@@ -1,0 +1,35 @@
+<! DOCTYPE>
+<html lang='es'>
+
+<head>
+	<meta charset='utf-8'>
+	<title>Pruebas par agenvida</title>
+	<style>
+	{% block style_css %}{% endblock %}
+	</style>
+</head>
+<body>
+	<header>
+		{% block encabezado %}{% endblock %}
+	
+	<nav>
+		<ul>
+			<li> <a href='/'>Inicio</a>
+			<li> <a href='/usuarios'>Usuarios</a>
+			<li> <a href='/Historias'>Historias</a>
+			<li> <a href='/sobre'>Sobre</a>
+		</ul>
+	</nav>
+<hr>
+	</header>
+	
+	<section class='contenido'>
+		{% block contenido %} {% endblock %}
+	</section>
+	<footer>
+		<p>Proyecto 1 de ejemplo para Agenvida </p>
+	</footer>
+
+</body>
+
+</html>
