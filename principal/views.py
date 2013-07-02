@@ -5,10 +5,10 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.mail import EmailMessage
 from principal.forms import *
-
+#,context_instance=RequestContext(request) esto hace que se puedan acceder a los paths de settings y demas
 def lista_personas(request):
 	personas= Persona.objects.all()
-	return render_to_response('lista_personas.html',{'lista':personas})
+	return render_to_response('lista_personas.html',{'lista':personas},context_instance=RequestContext(request))
 
 def sobre(request):
 	html = "<html><body>Estamos experimentando</body></html>"
@@ -16,12 +16,12 @@ def sobre(request):
 
 def inicio(request):
 	historials = historial.objects.all()
-	return render_to_response('inicio.html',{'historials':historials})
+	return render_to_response('inicio.html',{'historials':historials},context_instance=RequestContext(request))
 
 def usuarios (request):
 	usuarios= User.objects.all()
 	historiales = historial.objects.all()
-	return render_to_response('usuarios.html',{'usuarios':usuarios,'historiales':historiales })
+	return render_to_response('usuarios.html',{'usuarios':usuarios,'historiales':historiales },context_instance=RequestContext(request))
 
 def detalle_historial (request, id_historial):
 	dato = get_object_or_404(historial, pk=id_historial)
