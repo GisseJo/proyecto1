@@ -161,3 +161,10 @@ LOGGING = {
         },
     }
 }
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'remitente@gmail.com'
+EMAIL_HOST_PASSWORD = 'clave de tu correo'
+EMAIL_PORT = 587
+
