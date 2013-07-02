@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block encabezado %}
-	<h1>{{historial.ideal_personal| tittle}}</h1>
+	<h1>{{historial.ideal_personal| title}}</h1>
 {% endblock %}
 
 
@@ -30,5 +30,4 @@
 
 <p> Registrado {{historial.tiempo_de_registro| date:'SHORT_DATETIME_FORMAT'}} por {{historial.usuario}}</p>
 </footer>
-
 {% endblock %}
