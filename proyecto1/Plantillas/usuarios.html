@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block contenido %}
- <ul>
+ <ul >
 {% for dato in usuarios %}
-  <li>{{dato.username|capfirst}}<em>{{dato.email}}</em>
+  <li class="{% cycle 'impar' 'par' %}">{{dato.username|capfirst}} <em>- {{dato.email}}</em>
   	<ul>
   		{% for item in historiales %}
   			{% if item.usuario == dato %}

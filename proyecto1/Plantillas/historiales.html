@@ -16,7 +16,7 @@
 	{% for dato in datos %}
 	<li>
 		<a href='{% url "principal.views.detalle_historial" dato.id %}'>{{dato.ideal_personal}}</a><br>
-		<img alt="" src='{{MEDIA_URL}}{{dato.imagen}}'>
+		<img alt="" src='{{MEDIA_URL}}{{dato.imagen_de_perfil}}'>
 	</li>
 	{% endfor %}
 </ul>	

@@ -1,6 +1,5 @@
-# Django settings for proyecto1 project.
 #encoding:utf-8
-
+# Django settings for proyecto1 project.
 # Identificando la ruta del proyecto
 import os
 RUTA_PROYECTO= os.path.dirname(os.path.realpath(__file__))

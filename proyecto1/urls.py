@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^contacto/$','principal.views.contacto'),
     url(r'^comentario/$','principal.views.nuevo_comentario'),
     url(r'^historial/nuevo/$','principal.views.nuevo_historial'),
+    url(r'^usuario/nuevo/$','principal.views.nuevo_usuario'),
     
     
 )

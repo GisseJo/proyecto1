@@ -5,6 +5,12 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.mail import EmailMessage
 from principal.forms import *
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
+
+
 #,context_instance=RequestContext(request) esto hace que se puedan acceder a los paths de settings y demas
 def lista_personas(request):
 	personas= Persona.objects.all()
@@ -49,7 +55,7 @@ def nuevo_historial(request):
 		formulario = HistorialForm(request.POST,request.FILES)
 		if formulario.is_valid():
 			formulario.save()
-			return HttpResponseRedirect('/historiales')
+			return HttpResponseRedirect('/historial')
 	else:
 		formulario = HistorialForm()
 	return render_to_response('historialform.html', {'formulario':formulario},context_instance=RequestContext(request))
@@ -60,7 +66,20 @@ def nuevo_comentario(request):
 		formulario = ComentarioForm(request.POST, request.FILES)
 		if formulario.is_valid():
 			formulario.save()
-			return HttpResponseRedirect('/recetas')
+			return HttpResponseRedirect('/historial')
 	else:
 		formulario = ComentarioForm()
 	return render_to_response('comentarioform.html', {'formulario':formulario},context_instance=RequestContext(request))
+def nuevo_usuario(request):
+	if request.method=='POST':
+		formulario = UserCreationForm(request.POST)
+		if formulario.is_valid():
+			formulario.save()
+			return HttpResponseRedirect('/')
+	else:
+		formulario = UserCreationForm()
+	return render_to_response('nuevousuario.html',{'formulario':formulario},context_instance=RequestContext(request))
+
+			
+							
+	
