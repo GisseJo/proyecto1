@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset='utf-8'>
-	<title>Pruebas para agenvida</title>
+	<title>Pruebas para agenvida - {% block titulo %}{% endblock %}</title>
 	<link rel='stylesheet' href='{{STATIC_URL}}css/base.css'>
 	<link rel='shortcut icon' href='{{STATIC_URL}}img/av.png'>
 	<style>
@@ -26,6 +26,8 @@
 			<li> <a href='/comentario'>Hacer Comentario</a>
 			<li> <a href='/historial/nuevo/'>Nuevo Historial</a>
 			<li> <a href='/usuario/nuevo/'>Nuevo Usuario</a>
+		   	<li> <a href='/ingresar'>ingresar</a>
+		   	<li> <a href='/cerrar/'>Cerrar Sesion</a>
 			
 		</ul>
 	</nav>
