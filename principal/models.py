@@ -2,10 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib import admin
-from calendar import HTMLCalendar
-from datetime import date
-from itertools import groupby
-from django.utils.html import conditional_escape as esc
+
 
 class Persona (models.Model):
 	nombre = models.CharField(max_length=50)
@@ -32,6 +29,7 @@ class comentario (models.Model):
 
 	def __unicode__(self):
 		return self.texto
+	
 
 
 

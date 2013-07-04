@@ -6,8 +6,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT,}
-    ),
+    url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT,}),
     url(r'^sobre/$','principal.views.sobre'),
     url(r'^$','principal.views.inicio'),
     url(r'^usuarios/$','principal.views.usuarios'),
@@ -20,7 +19,11 @@ urlpatterns = patterns('',
     url(r'^ingresar/$','principal.views.ingresar'),
     url(r'^privado/$','principal.views.privado'),
     url(r'^cerrar/$','principal.views.cerrar'),
-    url(r'^cal/$','principal.views.calendar'),
+    
+    ######################newapp    
+    (r"^mark_done/(\d*)/$", "newapp.views.mark_done"),
+   
+   
     
     
 )
