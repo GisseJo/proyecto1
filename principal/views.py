@@ -1,4 +1,4 @@
-from principal.models import Persona, historial, comentario,WorkoutCalendar
+from principal.models import Persona, historial, comentario
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404 
@@ -9,8 +9,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-import time
-from django.utils.safestring import mark_safe
+
 #,context_instance=RequestContext(request) esto hace que se puedan acceder a los paths de settings y demas
 
 def lista_personas(request):
@@ -116,10 +115,7 @@ def cerrar(request):
 
 
 
-def calendar(request, year=2013, month=10 ):
-  my_workouts = historial.objects.order_by('tiempo_de_registro').filter( tiempo_de_registro__year=year, tiempo_de_registro__month=month  )
-  cal = WorkoutCalendar(my_workouts).formatmonth(year, month)
-  return render_to_response('cal.html', {'calendar': mark_safe(cal),})	
+
  
  
  
