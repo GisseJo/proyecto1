@@ -1,8 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
-from django.conf.urls.defaults import *
-from blog.models import *
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -23,13 +22,8 @@ urlpatterns = patterns('',
     url(r'^cerrar/$','principal.views.cerrar'),
     
     ######################newapp    
-  urlpatterns = patterns("blog.views",
-   (r"^post/(?P<dpk>\d+)/$"          , PostView.as_view(), {}, "post"),
-   (r"^archive_month/(\d+)/(\d+)/$"  , ArchiveMonth.as_view(), {}, "archive_month"),
-   (r"^$"                            , Main.as_view(), {}, "main"),
-   # (r"^delete_comment/(\d+)/$"       , "delete_comment", {}, "delete_comment"),
-)
-
+    (r'^mark_done/(\d*)/$', 'newapp.views.mark_done'),
+    url (r'^blog/$','blog.views.main'),
    
    
     
