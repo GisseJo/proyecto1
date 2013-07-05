@@ -23,7 +23,16 @@ urlpatterns = patterns('',
     
     ######################newapp    
     (r'^mark_done/(\d*)/$', 'newapp.views.mark_done'),
+
+    ###################blog
     url (r'^blog/$','blog.views.main'),
+    url (r'^blog/post/(\d+)/$','blog.views.post'),
+    url(r'^blog/add_comment/(\d+)/$', 'blog.views.add_comment'),
+    url(r"^blog/month/(\d+)/(\d+)/$", 'blog.views.month'),
+
+
+    
+
    
    
     
