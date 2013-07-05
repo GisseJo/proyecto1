@@ -116,6 +116,7 @@ WSGI_APPLICATION = 'proyecto1.wsgi.application'
 TEMPLATE_DIRS = (
     os.path.join(RUTA_PROYECTO, 'Plantillas'),
     os.path.join(RUTA_PROYECTO, 'templates'),
+     os.path.join(RUTA_PROYECTO, 'templates/blog'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -132,6 +133,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'principal',
     'newapp',
+    'blog',
 )
 
 # A sample logging configuration. The only tangible logging

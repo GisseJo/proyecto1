@@ -10,3 +10,4 @@ def mark_done(request, pk):
     item.done = True
     item.save()
     return HttpResponseRedirect(reverse("admin:newapp_item_changelist"))
+

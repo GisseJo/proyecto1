@@ -19,15 +19,23 @@ class Item(models.Model):
     priority = models.IntegerField(default=0)
     difficulty = models.IntegerField(default=0)
     done = models.BooleanField(default=False)
+    user = models.ForeignKey(User, blank=True, null=True)
+    progreso = models.IntegerField(default=0)
+
+    def progress(self):
+        return "<div style='width: 100px; border: 1px solid #ccc;'>" + \
+      "<div style='height: 4px; width: %dpx; background: #555; '></div></div>" % self.progreso
+    progress.allow_tags = True 
     
     def mark_done(self):
         return "<a href='%s'>Done</a>" % reverse("newapp.views.mark_done", args=[self.pk])
     mark_done.allow_tags = True
+   
     
 
 
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ["name", "priority", "difficulty", "created", "done"]
+    list_display = ["name", "priority", "difficulty", "created", "done","mark_done","user","progress"]
     search_fields = ["name"]
 # esto hace que pueda agregar nuevos items por lineas , muuucho mas facil    
 class ItemInline(admin.TabularInline):
@@ -62,3 +70,17 @@ class DateAdmin(admin.ModelAdmin):
             self.message_user(request, msg)
     
             return HttpResponseRedirect(reverse("admin:newapp_item_changelist"))
+
+        
+
+
+class Cosas (models.Model):
+    nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
+    cantidad = models.IntegerField(default=0)
+    def __unicode__(self):
+        return self.nombre
+
+    
+    def apellido(self):
+        return "<a href='%s'>Done</a>"

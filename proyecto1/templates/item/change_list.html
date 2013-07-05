@@ -1,7 +1,39 @@
 {% extends "admin/base_site.html" %}
 {% load i18n admin_static admin_list %}
 {% load admin_urls %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
 
+    $(document).ready(function(){
+
+    {% for obj in cl.result_list %}
+
+        // Done toggle
+        $('#done_{{ obj.pk }}').click(function() {
+
+            if ($(this).html().indexOf("icon-on") != -1) { $action = "off"; }
+            else { $action = "on"; }
+
+            $.ajax({
+                type: "POST",
+                url: "/dbe/onhold_done/done/" + $action + "/{{ obj.pk }}/",
+                success: function(action) {
+                    $('#done_{{ obj.pk }}').html("<img class='btn' src='/media/img/admin/icon-"
+                        +$action+".gif' />");
+                }
+            })
+        });
+
+        });
+
+    {% endfor %}
+
+    });
+</script>
+
+<style type="text/css">
+    .btn { cursor: pointer; }
+</style>
 {% block extrastyle %}
   {{ block.super }}
   <link rel="stylesheet" type="text/css" href="{% static "admin/css/changelists.css" %}" />
