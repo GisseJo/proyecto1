@@ -8,7 +8,7 @@ from blog.forms import *
 from django.core.context_processors import csrf
 import time
 from calendar import month_name
-
+from django.core.mail import send_mail
 
 def main(request):
     """Main listing."""
@@ -84,3 +84,12 @@ def month(request, year, month):
                                                 months=mkmonth_lst(), archive=True))
 
 
+def delete_comment(request, post_pk, pk=None):
+    """Delete comment(s) with primary key `pk` or with pks in POST."""
+    if request.user.is_staff:
+        if not pk: pklst = request.POST.getlist("delete")
+        else: pklst = [pk]
+
+        for pk in pklst:
+            Comment.objects.get(pk=pk).delete()
+        return HttpResponseRedirect(reverse("blog.views.post", args=[post_pk]))

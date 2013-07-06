@@ -1,3 +1,4 @@
+#encoding:utf-8
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
@@ -21,7 +22,7 @@ urlpatterns = patterns('',
     url(r'^privado/$','principal.views.privado'),
     url(r'^cerrar/$','principal.views.cerrar'),
     
-    ######################newapp    
+    ######################newapp´-TODO    
     (r'^mark_done/(\d*)/$', 'newapp.views.mark_done'),
 
     ###################blog
@@ -29,11 +30,18 @@ urlpatterns = patterns('',
     url (r'^blog/post/(\d+)/$','blog.views.post'),
     url(r'^blog/add_comment/(\d+)/$', 'blog.views.add_comment'),
     url(r"^blog/month/(\d+)/(\d+)/$", 'blog.views.month'),
+    url(r"^blog/delete_comment/(\d+)/$", "blog.views.delete_comment"),
+    url(r"^blog/delete_comment/(\d+)/(\d+)/$", "blog.views.delete_comment"),
 
-
+##################CALENDAR
     
+    url(r"^cal/(\d+)/$", "cal.views.main"), 
+    url(r"^cal/$", "cal.views.main"),
 
-   
+    url(r"^cal/month/(\d+)/(\d+)/(prev|next)/$", "cal.views.month"),
+    url(r"^cal/month/(\d+)/(\d+)/$", "cal.views.month"),
+    url(r"^cal/month/$", "cal.views.month"),
+    url(r"^cal/day/(\d+)/(\d+)/(\d+)/$", "cal.views.day"),
    
     
     

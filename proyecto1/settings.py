@@ -134,6 +134,7 @@ INSTALLED_APPS = (
     'principal',
     'newapp',
     'blog',
+    'cal',
 )
 
 # A sample logging configuration. The only tangible logging
