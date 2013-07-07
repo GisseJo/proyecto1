@@ -1,4 +1,4 @@
-body, header, footer, div, h1, h2, ul, li, a {
+body, header, footer, div, h1, h2, ul, li {
 	margin=0;
 	padding=0;
 }
@@ -8,12 +8,34 @@ header{
 	background-color:#008500;
 	color:#ffffff;
 	}
-nav, ul , li ,nav {
+nav, ul , li{
 	
 	text-decoration:none;
-	color:#fff;
-	magin:10px;
+	color:#000000;
+	margin:100px;
+	background:#ffffff;font-family:Arial;margin:0 auto;position:absolute;top:0;width:100%;z-index:6;
+	font-size:0;padding:0;text-align:right;
+	display:inline-block;zoom:1;*display:inline;
+	font-size:14px;font-weight:bold;position:relative;
+	text-align:center;text-transform:uppercase;
+		-o-transition:.2s background;
+		-ms-transition:.2s background;
+		-moz-transition:.2s background;
+		-webkit-transition:.2s background;
+
 }
+
+a {
+	display: inline-block;
+zoom: 1;
+font-size: 14px;
+font-weight: bold;
+position: relative;
+text-align: center;
+text-transform: uppercase;
+}
+
+
 
 .activo{
 	font-weight:bold;
@@ -27,3 +49,14 @@ nav, ul , li ,nav {
 	background-color:#90EE90;
 }
 
+#menu {
+
+	padding: 14px 15px 0 0;
+	margin-bottom: 1px;
+}
+
+.link {
+
+	font-size: arial, sans-serif;
+	text-align: center;
+}

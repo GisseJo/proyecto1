@@ -15,24 +15,24 @@
 <body>
 	<header>
 		{% block encabezado %}{% endblock %}
-	
+
+<section>
 	<nav>
-		<ul>
-			<li> <a href='/'>Inicio</a>
-			<li> <a href='/usuarios'>Usuarios</a>
-			<li> <a href='/historial'>Historias</a>
-			<li> <a href='/sobre'>Sobre</a>
-			<li> <a href='/contacto'>Contactenos</a>
-			<li> <a href='/comentario'>Hacer Comentario</a>
-			<li> <a href='/historial/nuevo/'>Nuevo Historial</a>
-			<li> <a href='/usuario/nuevo/'>Nuevo Usuario</a>
-		   	<li> <a href='/ingresar'>ingresar</a>
-		   	<li> <a href='/cerrar/'>Cerrar Sesion</a>
-			
+		<ul id="menu">
+		
+			<a class="link" href='/'>Inicio</a>
+			<a class="link" href='/forum'>Foros</a>
+			<a class="link" href='/usuarios'>Usuarios</a>
+			<a class="link" href='/sobre'>Sobre</a>
+			<a class="link" href='/contacto'>Contactenos</a>
+			<a class="link" href='/ingresar'>Ingresar</a>
+			<a class="link" href='/admin'>Admin</a>
+		   	<a class="link" href='/cerrar/'>Cerrar Sesion</a>
 		</ul>
 	</nav>
-<hr>
-	</header>
+</section>
+
+</header>
 	
 	<section class='contenido'>
 		{% block contenido %} {% endblock %}

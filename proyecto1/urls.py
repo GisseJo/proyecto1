@@ -43,6 +43,15 @@ urlpatterns = patterns('',
     url(r"^cal/month/$", "cal.views.month"),
     url(r"^cal/day/(\d+)/(\d+)/(\d+)/$", "cal.views.day"),
    
-    
-    
+###################FORUM
+
+    url(r"forum/$", "forum.views.main"),
+    url(r"^forum/forum/(\d+)/$", "forum.views.forum"),
+    url(r"^forum/thread/(\d+)/$", "forum.views.thread"),
+    url(r"^forum/post/(new_thread|reply)/(\d+)/$", "forum.views.post"),
+    url(r"^forum/reply/(\d+)/$", "forum.views.reply"),
+    url(r"^forum/new_thread/(\d+)/$", "forum.views.new_thread"),
+    url(r"^forum/profile/(\d+)/$", "forum.views.profile"),
+    url(r"^forum/accounts/", include('registration.urls')),
 )
+
