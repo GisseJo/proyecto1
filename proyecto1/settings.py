@@ -135,8 +135,10 @@ INSTALLED_APPS = (
     'newapp',
     'blog',
     'cal',
+    'forum',
+    'registration'
 )
-
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
@@ -168,7 +170,7 @@ LOGGING = {
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'remitente@gmail.com'
-EMAIL_HOST_PASSWORD = 'clave de tu correo'
+EMAIL_HOST_USER = 'yankex5@gmail.com'
+EMAIL_HOST_PASSWORD = 'elhacker07'
 EMAIL_PORT = 587
 

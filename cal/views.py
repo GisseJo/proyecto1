@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, render_to_response
 from django.forms.models import modelformset_factory
 from django.core.context_processors import csrf
+from django.core.urlresolvers import reverse
 
 from cal.models import *
 
@@ -127,7 +128,7 @@ def day(request, year, month, day):
                 entry.creator = request.user
                 entry.date = date(int(year), int(month), int(day))
                 entry.save()
-            return HttpResponseRedirect(reverse("dbe.cal.views.month", args=(year, month)))
+            return HttpResponseRedirect(reverse("cal.views.month", args=(year, month)))
 
     else:
         # display formset for existing enties and one extra form
