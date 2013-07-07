@@ -5,7 +5,15 @@
 
 
 <h4>My Entries</h4>
+{% for entry in other_entries %}
+    <div class="entry">
+    {{ entry.creator }} |
+    {{ entry.short|safe }}<br />
+    {{ entry.body }}<br />
+    </div>
+{% endfor %} <br />
 <form action="{% url 'cal.views.day' year month day %}" method="POST"> {% csrf_token %}
+
 
 {{ entries.management_form }}
 

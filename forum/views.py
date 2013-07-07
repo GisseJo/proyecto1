@@ -14,7 +14,7 @@ from django.forms import ModelForm
 from django.contrib.auth.models import User
 
 
-from django.db.models.signals import post_save
+
 
 def main(request):
     """Main listing."""

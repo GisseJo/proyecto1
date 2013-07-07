@@ -42,6 +42,9 @@ urlpatterns = patterns('',
     url(r"^cal/month/(\d+)/(\d+)/$", "cal.views.month"),
     url(r"^cal/month/$", "cal.views.month"),
     url(r"^cal/day/(\d+)/(\d+)/(\d+)/$", "cal.views.day"),
+    url(r"^cal/settings/$", "cal.views.settings"),
+
+
 #################forum
 
    

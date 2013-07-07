@@ -35,7 +35,20 @@
 </head>
 
 <body>
-    
+     <div id="sidebar"> 
+     	{% block sidebar %}
+	     	<style type="text/css">
+	        #sidebar { float: right; border: 1px dotted #ccc; padding: 4px; }
+	    	</style>
+		    {% if reminders %}
+				<div class="reminders">
+		    	<div class="gr">Alerts</div>
+		    	{% for reminder in reminders %} 
+		    		<p> {{ reminder.short|safe }}</p>
+		    	{% endfor %}
+				</div>
+			{% endif %}
+        {% endblock %} </div>
     <div id="container">
         <div id="menu">
             {% block nav-global %}
@@ -44,10 +57,9 @@
                 <h3>MyBlog</h3>
                 {% if user.is_staff %}
                 <a href="{% url 'admin:index' %}">Admin</a>
-                
-              
+                                           
                 {% endif %}
-
+                <a href="/cal/settings">Settings</a>
             {% endblock %}
         </div>
 
