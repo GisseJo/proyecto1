@@ -1,9 +1,10 @@
-{% extends "cal/base2.html" %}
+{% extends "cal/base.html" %}
 <!-- ... -->
 {% block content %}
-asdfas
+
 <a href= "{% url 'cal.views.month' year month "prev" %}">&lt;&lt; Prev</a>
 <a href= "{% url 'cal.views.month' year month "next" %}">Next &gt;&gt;</a>
+<a href= "{% url 'cal.views.main' %}">Main</a>
 
 <h4>{{ mname }} {{ year }}</h4>
 

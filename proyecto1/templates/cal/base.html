@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head> <title>{% block title %}MyBlog{% endblock %}</title> 
+<head> <title>{% block title %}Calendario{% endblock %}</title> 
 	<style type="text/css">
 	        * {
 	            color: #555;
@@ -31,24 +31,41 @@
 	        #container { margin: auto; width: 1000px; border: 0px solid; }
 	        p { font-size: 1.1em; }
 	        h3 { margin-right: 30px; display: inline; }
+	    
 	    </style>
 </head>
 
 <body>
-    
+	<div id="sidebar"> {% block sidebar %} 
+   	<style type="text/css">
+        #sidebar { float: right; border: 1px dotted #ccc; padding: 4px; }
+    </style>
+
+ {% if reminders %}
+<div class="reminders">
+    <div class="gr">Alerts</div>
+    {% for reminder in reminders %}<p> {{ reminder.short|safe }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+
+   	{% endblock %} </div>
+  
+
     <div id="container">
         <div id="menu">
             {% block nav-global %}
 
                 <!-- MENU -->
-                <h3>MyBlog</h3>
+                <h3>Calendario</h3>
                 {% if user.is_staff %}
                 <a href="{% url 'admin:index' %}">Admin</a>
-                
-              
+                              
                 {% endif %}
-
+<a href="/cal/settings">Settings</a>
+<a href= "{% url 'cal.views.main' %}">Main</a>
             {% endblock %}
+
         </div>
 
         <div id="content">

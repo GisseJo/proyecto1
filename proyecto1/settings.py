@@ -137,6 +137,7 @@ INSTALLED_APPS = (
     'cal',
     'forum',
     'registration',
+    'photo',
 )
 
 # A sample logging configuration. The only tangible logging

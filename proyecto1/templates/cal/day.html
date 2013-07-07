@@ -3,8 +3,17 @@
 
 {% block content %}
 
+<a href= "{% url 'cal.views.month' year month %}">Month</a>
+<a href= "{% url 'cal.views.main' %}">Main</a>
 
-<h4>My Entries</h4>
+<h4>Mis entradas</h4>
+{% for entry in other_entries %}
+    <div class="entry">
+    {{ entry.creator }} |
+    {{ entry.short|safe }}<br />
+    {{ entry.body }}<br />
+    </div>
+{% endfor %} <br />
 <form action="{% url 'cal.views.day' year month day %}" method="POST"> {% csrf_token %}
 
 {{ entries.management_form }}

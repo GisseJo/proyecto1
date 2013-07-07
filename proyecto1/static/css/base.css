@@ -51,12 +51,24 @@ text-transform: uppercase;
 
 #menu {
 
-	padding: 14px 15px 0 0;
-	margin-bottom: 1px;
+	text-decoration: none;
+     text-align: center;
+     background: #D8D8D8;
+     padding: 15px 15px 15px 15px;
+     color: #777;
+     font-size: 14px;
+     border-radius: 10px 10px;
+     box-shadow: 2px 2px 2px 1px white;
 }
 
 .link {
 
-	font-size: arial, sans-serif;
-	text-align: center;
+	text-decoration: none;
+     text-align: center;
+     background: #D8D8D8;
+     padding: 15px 15px 15px 15px;
+     color: #777;
+     font-size: 14px;
+     border-radius: 10px 10px;
+     box-shadow: 2px 2px 2px 1px white;
 }
