@@ -1,9 +1,8 @@
 <! DOCTYPE>
 <html lang='es'>
-
 <head>
 	<meta charset='utf-8'>
-	<title>Pruebas para agenvida - {% block titulo %}{% endblock %}</title>
+	<title>Agenvida - {% block titulo %}{% endblock %}</title>
 	<link rel='stylesheet' href='{{STATIC_URL}}css/base.css'>
 	<link rel='shortcut icon' href='{{STATIC_URL}}img/av.png'>
 	<style>
@@ -12,35 +11,52 @@
 	<script src='{{STATIC_URL}}js/demo.js/jquery-1.10.1.min.js'></script>
 	<script src='{{STATIC_URL}}js/demo.js/demo.js'></script>
 </head>
+
 <body>
 	<header>
 		{% block encabezado %}{% endblock %}
 
-<section>
+<section class="encabezado">
+
 	<nav>
-		<ul id="menu">
-		
-			<a class="link" href='/'>Inicio</a>
-			<a class="link" href='/forum'>Foros</a>
-			<a class="link" href='/cal'>Calendario</a>
-			<a class="link" href='/usuarios'>Usuarios</a>
-			<a class="link" href='/sobre'>Sobre</a>
-			<a class="link" href='/contacto'>Contactenos</a>
-			<a class="link" href='/ingresar'>Ingresar</a>
-			<a class="link" href='/admin'>Admin</a>
-		   	<a class="link" href='/cerrar/'>Cerrar Sesion</a>
+		<ul class="menu">
+			<a id="link" href='/'>Inicio</a>
+			<a id="link" href='/forum'>Foros</a>
+			<a id="link" href='/cal'>Calendario</a>
+			<a id="link" href='/usuarios'>Usuarios</a>
+			<a id="link" href='/sobre'>Sobre</a>
+			<a id="link" href='/contacto'>Contactenos</a>
+			<a id="link" href='/ingresar'>Ingresar</a>
+			<a id="link" href='/admin'>Admin</a>
+		   	<a id="link" href='/cerrar/'>Cerrar Sesion</a>
 		</ul>
 	</nav>
 </section>
-
 </header>
-	
-	<section class='contenido'>
+<section>
+<p></p>      
+<p></p>
+
+</section>
+<section class="image_intro"><a href="http://agenvida.com"><img src="{{STATIC_URL}}img/proxi.png" widht="750" height="327" align="center"></a></section>
+<section>
+<p></p>      
+<p></p>
+
+</section>
+<section class='contenido'>
 		{% block contenido %} {% endblock %}
 	</section>
 	<footer>
+		
 		<p>Proyecto 1 de ejemplo para Agenvida </p>
+		<div>Creado por <a id="link" href="http://twitter.com/GisseJo">@GisseJo</a> y <a id="link" href="http://twitter.com/rodrivaldez5">@rodrivaldez5</a></div>
+
 	</footer>
+
+
+
+
 
 </body>
 

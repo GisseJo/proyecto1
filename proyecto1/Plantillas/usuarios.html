@@ -2,10 +2,11 @@
 {% block titulo %} Usuario {% endblock %}
 
 {% block encabezado %}
-	<h1> Colaboradores</h1>
+	
 {% endblock %}
 
 {% block contenido %}
+ <h1> Colaboradores</h1>
  <ul >
 {% for dato in usuarios %}
   <li class="{% cycle 'impar' 'par' %}">{{dato.username|capfirst}} <em>- {{dato.email}}</em>

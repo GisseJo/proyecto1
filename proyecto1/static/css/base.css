@@ -1,3 +1,46 @@
+section.encabezado {
+
+}
+
+.menu {
+
+	text-align: center;
+     
+     padding: 5px 10px 10px 0,5px;
+     color: #777;
+     font-size: 14px;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 2px 2px 2px 1px white;
+}
+
+#link {
+
+	text-align: center;
+     background: #D8D8D8;
+     padding: 15px 15px 15px 15px;
+     color: #777;
+     font-size: 14px;
+     border-radius: 10px 10px;
+     box-shadow: 2px 2px 2px 1px white;
+}
+
+section.contenido {
+
+	text-align: center;
+    background-color: #888888;
+    padding: 15px 15px 15px 15px;
+     color: #777;
+     font-size: 14px;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 2px 2px 2px 1px white;
+     box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+width:30%;
+float:center;
+margin-right: auto;
+margin-left: auto;
+}
+
 body, header, footer, div, h1, h2, ul, li {
 	margin=0;
 	padding=0;
@@ -5,15 +48,15 @@ body, header, footer, div, h1, h2, ul, li {
 
 header{
 	
-	background-color:#008500;
+	
 	color:#ffffff;
 	}
 nav, ul , li{
 	
 	text-decoration:none;
-	color:#000000;
+	color: black;
 	margin:100px;
-	background:#ffffff;font-family:Arial;margin:0 auto;position:absolute;top:0;width:100%;z-index:6;
+	font-family:Arial;margin:0 auto;position:absolute;top:0;width:100%;z-index:6;
 	font-size:0;padding:0;text-align:right;
 	display:inline-block;zoom:1;*display:inline;
 	font-size:14px;font-weight:bold;position:relative;
@@ -43,32 +86,37 @@ text-transform: uppercase;
 	
 .par {
 	background-color:#5ACC5A;
+	border-radius: 10px 10px;
+	font-family: arial, sans-serif;
+	font-size: 15px;
 }
 
 .impar {
 	background-color:#90EE90;
+	border-radius: 10px 10px;
+	font-family: arial, sans-serif;
+	font-size: 15px;
+
+
 }
 
-#menu {
+p, h1 {
 
-	text-decoration: none;
-     text-align: center;
-     background: #D8D8D8;
-     padding: 15px 15px 15px 15px;
-     color: #777;
-     font-size: 14px;
-     border-radius: 10px 10px;
-     box-shadow: 2px 2px 2px 1px white;
+	color: black;
+	font-family: arial, sans-serif;
+	font-size: 15px;
+	text-align: center;
 }
 
-.link {
+section.image_intro {
 
-	text-decoration: none;
-     text-align: center;
-     background: #D8D8D8;
-     padding: 15px 15px 15px 15px;
-     color: #777;
-     font-size: 14px;
-     border-radius: 10px 10px;
-     box-shadow: 2px 2px 2px 1px white;
+	float: center;
+margin-right: auto;
+margin-left: auto;
+text-align: center;
+}
+
+div {
+
+	text-align: center;
 }
