@@ -26,10 +26,18 @@
 			<a id="link" href='/usuarios'>Usuarios</a>
 			<a id="link" href='/sobre'>Sobre</a>
 			<a id="link" href='/contacto'>Contactenos</a>
+			{% if not user.authenticated %}
 			<a id="link" href='/ingresar'>Ingresar</a>
-			<a id="link" href='/admin'>Admin</a>
-		   	<a id="link" href='/cerrar/'>Cerrar Sesion</a>
+			{% endif %}
+			{% if user.is_staff %}
+				<a id="link" href='/admin'>Admin</a>
+			{% endif %}
+		   	{% if user.is_authenticated %}<!-- si el usuario esta autenticado -->
+		   		<a id="link" href='/cerrar/'>Cerrar Sesion</a> 
+		   	{% endif %}
+		   	{% if user.is_staff %}
 		   	<a id="link" href='/usuario/nuevo'>Nuevo Usuario</a>
+		   	{% endif %}
 		</ul>
 	</nav>
 </section>
