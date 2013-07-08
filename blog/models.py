@@ -14,6 +14,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """Modelo de los comentarios"""
     created = models.DateTimeField(auto_now_add=True)
     author = models.CharField(max_length=60)
     body = models.TextField()

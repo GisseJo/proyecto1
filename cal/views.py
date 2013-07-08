@@ -23,7 +23,7 @@ def _show_users(request):
 
 @login_required
 def settings(request):
-    """Settings screen."""
+    """Settings screen. Mostrar o no mostrar la entradas de los demas usuarios"""
     s = request.session
     _show_users(request)
     if request.method == "POST":

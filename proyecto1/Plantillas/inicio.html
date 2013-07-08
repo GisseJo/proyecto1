@@ -13,7 +13,7 @@
 	<p>
 		Actualmente estan registradas:
 		{% with total=historials.count %}
-			{{total}} historial{{total|pluralize}}
+			{{total}} historial{{total|pluralize:"es"}}
 		{% endwith %}
 	</p>
 	

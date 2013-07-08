@@ -31,14 +31,10 @@
             
         </ul>             
     </div>
-
-
-
-
 {% if comments %}
     <p>Comments:</p>
 {% endif %}
-<!--ACA VAN LOS COMENTARIOS COMENTARIOS  -->
+<!--ACA VAN LOS COMENTARIOS YA HECHOS  -->
 <form action="{% url 'blog.views.delete_comment' post.pk %}" method="POST">{% csrf_token %}
 {% for comment in comments %}
     <div class="comment">

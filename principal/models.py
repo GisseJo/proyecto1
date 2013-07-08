@@ -23,7 +23,7 @@ class historial(models.Model):
 	def __unicode__(self):
 		return self.ideal_personal
 	class Meta:
-        verbose_name_plural = "historiales"
+		verbose_name_plural = "historiales"
 
 class comentario (models.Model):
 	historial = models.ForeignKey(historial)

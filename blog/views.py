@@ -26,11 +26,8 @@ def main(request):
     return render_to_response("list.html", dict(posts=posts, user=request.user,
                                             post_list=posts.object_list, months=mkmonth_lst()))
 
-
-
-
 def post(request, pk):
-    """Single post with comments and a comment form."""
+    """Single post with comments and a comment FORM. que esta en post.html"""
     post = Post.objects.get(pk=int(pk))
     comments = Comment.objects.filter(post=post)
     d = dict(post=post, comments=comments, form=CommentForm(), user=request.user)
@@ -40,11 +37,9 @@ def post(request, pk):
 def add_comment(request, pk):
     """Add a new comment."""
     p = request.POST
-
     if p.has_key("body") and p["body"]:
         author = "Anonymous"
         if p["author"]: author = p["author"]
-
         comment = Comment(post=Post.objects.get(pk=pk))
         cf = CommentForm(p, instance=comment)
         cf.fields["author"].required = False
@@ -85,7 +80,7 @@ def month(request, year, month):
 
 
 def delete_comment(request, post_pk, pk=None):
-    """Delete comment(s) with primary key `pk` or with pks in POST."""
+    """Delete comment(s) with primary key `pk` or with pks in POST. Le pasa como parametro el comentario tb"""
     if request.user.is_staff:
         if not pk: pklst = request.POST.getlist("delete")
         else: pklst = [pk]
