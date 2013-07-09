@@ -138,7 +138,7 @@ INSTALLED_APPS = (
     'forum',
     'registration',
     'photo',
-    'south',
+    
 )
 
 # A sample logging configuration. The only tangible logging

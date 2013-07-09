@@ -55,5 +55,17 @@ urlpatterns = patterns('',
     url(r"^forum/new_thread/(\d+)/$", "forum.views.new_thread"),
     url(r"^forum/profile/(\d+)/$", "forum.views.profile"),
     url(r"^forum/accounts/", include('registration.urls')),
+
+
+    url(r"^photo/$", "photo.views.main"),
+    url(r"^photo/(\d+)/$", "photo.views.album"),
+
+    url(r"^photo/image/(\d+)/$", "photo.views.image"),
+    url(r"^photo/(\d+)/(full|thumbnails)/$", "photo.views.album"),
+    url(r"^photo/(\d+)/(full|thumbnails|edit)/$", "photo.views.album"),
+    url(r"^photo/update/$", "photo.views.update"),
+    url(r"^photo/search/$", "photo.views.search"),
+    
+    
 )
 
