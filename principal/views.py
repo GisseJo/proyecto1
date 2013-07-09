@@ -107,7 +107,11 @@ def ingresar(request):
 @login_required(login_url='/ingresar')
 def privado(request):
 	usuario = request.user
-	return render_to_response('privado.html',{'usuario':usuario},context_instance=RequestContext(request))
+	try:
+		ua = request.META['HTTP_USER_AGENT']
+	except KeyError:
+		ua = 'unknown'	
+	return render_to_response('privado.html',{'usuario':usuario,'ua':ua },context_instance=RequestContext(request))
 @login_required(login_url='/ingresar')
 def cerrar(request):
 	logout(request)
