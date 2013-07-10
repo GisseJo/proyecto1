@@ -41,8 +41,7 @@ urlpatterns = patterns('',
     url(r"^cal/month/(\d+)/(\d+)/(prev|next)/$", "cal.views.month"),
     url(r"^cal/month/(\d+)/(\d+)/$", "cal.views.month"),
     url(r"^cal/month/$", "cal.views.month"),
-    url(r"^cal/day/(\d+)/(\d+)/(\d+)/$", "cal.views.day"),
-    url(r"^accounts/", include('registration.urls')),
+    url(r"^cal/day/(\d+)/(\d+)/(\d+)/$", "cal.views.day"),    
     url(r"^cal/settings/$", "cal.views.settings"),
    
 ###################FORUM
@@ -54,6 +53,7 @@ urlpatterns = patterns('',
     url(r"^forum/reply/(\d+)/$", "forum.views.reply"),
     url(r"^forum/new_thread/(\d+)/$", "forum.views.new_thread"),
     url(r"^forum/profile/(\d+)/$", "forum.views.profile"),
+    ##ejemplo de registro
     url(r"^forum/accounts/", include('registration.urls')),
 
 
@@ -65,7 +65,11 @@ urlpatterns = patterns('',
     url(r"^photo/(\d+)/(full|thumbnails|edit)/$", "photo.views.album"),
     url(r"^photo/update/$", "photo.views.update"),
     url(r"^photo/search/$", "photo.views.search"),
-    
+##############Authentication
+
+    url(r'^accounts/', include('allauth.urls')),
+    url(r"^accounts/", include('registration.urls')),
+    url(r'^accounts/profile/', 'principal.views.privado'),
     
 )
 

@@ -138,7 +138,40 @@ INSTALLED_APPS = (
     'forum',
     'registration',
     'photo',
+##### allauth############
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.twitter',
     
+)
+
+#allauth
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
+    "allauth.socialaccount.context_processors.socialaccount",
+    
+    'allauth.account.context_processors.account',  
+    
+)
+AUTHENTICATION_BACKENDS = (
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
+   
 )
 
 # A sample logging configuration. The only tangible logging

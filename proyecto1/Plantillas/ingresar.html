@@ -9,4 +9,6 @@
 	<table>{{formulario}}</table>
 	<p><input type='submit' value='ingresar'/></p>
 	</form>
+	{% load socialaccount %}
+	<p> Ingresar con  <a href="{%  provider_login_url 'twitter' %}">Twitter</a> </p>
 {% endblock %}
