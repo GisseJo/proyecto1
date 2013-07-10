@@ -1,72 +1,277 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<! DOCTYPE>
+<html lang='es'>
 <head>
-    <title>{% block title %}ForumApp{% endblock %}</title>
-    <!-- <meta http-equiv="refresh" content="2">  -->
-    <link rel="stylesheet" href="/media/style.css" type="text/css" media="screen" charset="utf-8" />
-
-    <style type="text/css">
-        * {
-            color: #555;
-            font-size: 0.95em;
-        }
-
-        #menu a {
-            text-decoration: none;
-            background: #eee;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            border-right: 2px solid #fff;
-            padding-right: 3px;
-            padding-left: 3px;
-            color: #777;
-            font-size: 0.9em;
-        }
-
-        a:hover {
-            background: #eeebeb;
-            border-top: 1px solid #aaa;
-            border-bottom: 1px solid #aaa;
-            color: #555;
-        }
-
-        #container { margin: auto; width: 800px; border: 0px solid; }
-
-        p { font-size: 1.1em; }
-        h3 { margin-right: 30px; display: inline; }
+    <meta charset='utf-8'>
+    <title>Agenvida - Foros{% block titulo %}{% endblock %}</title>
+    <link rel='stylesheet' href='./static/css/base.css'>
+    <link rel='shortcut icon' href='./img/av.png'>
+    <style>
+    {% block style_css %}{% endblock %}
     </style>
+    <script src='{{static_url}}js/demo.js/jquery-1.10.1.min.js'></script>
+    <script src='{{static_url}}js/demo.js/demo.js'></script>
+    <style type="text/css">
+    section.encabezado {
 
+}
+
+.menu {
+
+    text-align: center;
+     
+     padding: 5px 10px 10px 0,5px;
+     color: #777;
+     font-size: 14px;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 2px 2px 2px 1px white;
+}
+
+#link {
+
+    text-align: center;
+     background: #D8D8D8;
+     padding: 15px 15px 15px 15px;
+     color: #777;
+     font-size: 14px;
+     border-radius: 10px 10px;
+     box-shadow: 2px 2px 2px 1px white;
+}
+
+img.giro {
+
+    width: 300px;
+    vertical-align: center;
+
+
+}
+
+section.contenido {
+
+    text-align: center;
+    background-color: #888888;
+    padding: 15px 15px 15px 15px;
+     color: #777;
+     font-size: 14px;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 2px 2px 2px 1px white;
+     box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+width:30%;
+float:center;
+margin-right: auto;
+margin-left: auto;
+}
+
+body, header, footer, div, h1, h2, ul, li {
+    margin=0;
+    padding=0;
+}
+
+header{
+    
+    
+    color:#ffffff;
+    }
+nav, ul , li{
+    
+    text-decoration:none;
+    color: black;
+    margin:100px;
+    font-family:Arial;margin:0 auto;position:absolute;top:0;width:100%;z-index:6;
+    font-size:0;padding:0;text-align:right;
+    display:inline-block;zoom:1;*display:inline;
+    font-size:14px;font-weight:bold;position:relative;
+    text-align:center;text-transform:uppercase;
+        -o-transition:.2s background;
+        -ms-transition:.2s background;
+        -moz-transition:.2s background;
+        -webkit-transition:.2s background;
+
+}
+
+a {
+    display: inline-block;
+zoom: 1;
+font-size: 14px;
+font-weight: bold;
+position: relative;
+text-align: center;
+text-transform: uppercase;
+}
+
+
+
+.activo{
+    font-weight:bold;
+    }
+    
+.par {
+    background-color:#5ACC5A;
+    border-radius: 10px 10px;
+    font-family: arial, sans-serif;
+    font-size: 15px;
+}
+
+.impar {
+    background-color:#90EE90;
+    border-radius: 10px 10px;
+    font-family: arial, sans-serif;
+    font-size: 15px;
+
+
+}
+
+div.title {
+
+    background-color: green;
+    border-radius: 10px 10px;
+    font-family: arial, sans-serif;
+    font-color: white;
+    font-size: 15px;
+    padding: 15px 15px 15px 15px;
+    float:center;
+margin-right: auto;
+margin-left: auto;
+}
+p, h1 {
+
+    color: black;
+    font-family: arial, sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+section.image_intro {
+
+    float: center;
+margin-right: auto;
+margin-left: auto;
+text-align: center;
+}
+
+div {
+
+    text-align: center;
+}
+
+section.content {
+background-color: green;
+    border-radius: 10px 10px;
+    font-family: arial, sans-serif;
+    font-size: 15px;
+    padding: 15px 15px 15px 15px;
+    width:60%;
+float:center;
+margin-right: auto;
+margin-left: auto;
+
+}
+
+section.conten {
+
+    background-color: white;
+    border-radius: 10px 10px;
+    font-family: arial, sans-serif;
+    font-size: 15px;
+     
+float:center;
+margin-right: auto;
+margin-left: auto;
+
+}
+
+#list {
+
+font-color: white;
+border: 1px #ffffff;
+width: 100px;
+float: center;
+margin: auto;
+
+
+}
+
+td {
+
+    color: black;
+    border-bottom: 1px solid #ccc;
+    background: white;
+}
+
+td.last {
+  
+}
+div.ttitle {
+
+    color: white;
+    text-align:center;text-transform:uppercase;
+        -o-transition:.2s background;
+        -ms-transition:.2s background;
+        -moz-transition:.2s background;
+        -webkit-transition:.2s background;
+
+}
+
+a {
+
+    color: white;
+    
+    border-radius: 10px 10px;
+    float: center;
+    margin: auto;
+}
+    </style>
 </head>
 
 <body>
-    <div id="sidebar"> {% block sidebar %} {% endblock %} </div>
-    <div id="container">
-        <div id="menu">
-            {% block nav-global %}
+    <header>
+        {% block encabezado %}{% endblock %}
 
-                <!-- MENU -->
-                <h3><a href="{% url 'forum.views.main' %}">ForumApp</a></h3>
+<section class="encabezado">
+    <nav>
+        <ul class="menu">
+            <a id="link" href='/'>Inicio</a>
+            <a id="link" href='/blog'>Blog</a>
+            <a id="link" href='/forum'>Foros</a>
+            <a id="link" href='/cal'>Calendario</a>
+            <a id="link" href='/usuarios'>Usuarios</a>
+            <a id="link" href='/sobre'>Sobre</a>
+            <a id="link" href='/contacto'>Contactenos</a>
+            {% if not user.is_authenticated %}
+            <a id="link" href='/ingresar'>Ingresar</a>
+            {% endif %}
+            {% if user.is_staff %}
+            <a id="link" href='/admin'>Admin</a>
+            {% endif %}
+            {% if user.is_authenticated %}<!-- si el usuario esta autenticado -->
+            <a id="link" href='/cerrar/'>Cerrar Sesion</a> 
+            <a id="link" href="{% url 'forum.views.profile' user.pk %}">Editar perfil</a> {% endif %}
+            {% if user.is_staff %}
+            <a id="link" href='/usuario/nuevo'>Nuevo Usuario</a>
+            {% endif %} 
+            {% if not user.is_authenticated %}
+            <a id="link" href="/forum/accounts/login/?next=/forum/">Login</a> |
+            <a id="link" href="/forum/accounts/register/">Registro</a>{% endif %}
+            {% if user.is_authenticated %}
+            <a id="link" href="/forum/accounts/logout/?next=/forum/">logout</a>
+            {% endif %}
 
-                {% if user.is_staff %} <a href="{% url 'admin:index' %}">Admin</a> {% endif %}
-                {% if user.is_authenticated %}
-                    <a href="{% url 'forum.views.profile' user.pk %}">Edit profile</a> {% endif %}
+            {% block header %}{% endblock %}
+        </ul>
+    </nav>
+</section>
+</header>
 
-                {% if not user.is_authenticated %}<a href="/forum/accounts/login/?next=/forum/">login</a> | <a
-                    href="/forum/accounts/register/">register</a>{% endif %}
+<section class="content">
+{% block content %}{% endblock %}
 
-                {% if user.is_authenticated %}<a href="/forum/accounts/logout/?next=/forum/">logout</a>
-                    {% endif %}
+<section class= "conten">
+        {% block contenido %} {% endblock %}
+</section>
+</section>
 
-            {% endblock %}
-        </div>
-
-        <div id="content">
-            {% block content %}{% endblock %}
-        </div>
-    </div>
-
+<footer>
+    {% block footer %}{% endblock %}
+</footer>
 </body>
 </html>
-

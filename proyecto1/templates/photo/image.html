@@ -1,0 +1,26 @@
+{% extends "photo/pbase.html" %}
+{% block header %}
+<h3>
+                <a id="link" href="{% url 'photo.views.main' %}">PhotoApp</a></h3>
+                {% if user.is_staff %}
+                <a id="link" href="{% url 'admin:index' %}">Admin</a>
+                <a id="link" href="{% url 'admin:photo_image_add' %}">Add Image</a>
+                <a id="link" href="{% url 'photo.views.search' %}">Search</a>
+                <a id="link" href="{% url photo.views.album album.pk %}">{{ album.title }}</a>
+    ({{ album.image_set.count }} images)
+                {% endif %}
+{% endblock %}
+{% block content %}
+
+<a href="{{ backurl }}">&lt;&lt; back</a>
+<!-- Image -->
+<ul>
+    {% if image.title %}
+        <div class="title">{{ image.title }}</div>
+    {% endif %}
+
+    <ul>
+        <img border="0" alt="" src="{{ media_url }}{{ image.image.name }}" width="900" />
+    </ul>
+</ul>
+{% endblock %}

@@ -1,0 +1,73 @@
+<! DOCTYPE>
+<html lang='es'>
+<head>
+	<meta charset='utf-8'>
+	<title>Agenvida - {% block titulo %}{% endblock %}</title>
+	<link rel='stylesheet' href='{{static_url}}css/base.css'>
+	<link rel='shortcut icon' href='{{static_url}}img/av.png'>
+	<style>
+	{% block style_css %}{% endblock %}
+	</style>
+	<script src='{{static_url}}js/demo.js/jquery-1.10.1.min.js'></script>
+	<script src='{{static_url}}js/demo.js/demo.js'></script>
+</head>
+
+<body>
+	<header>
+		{% block encabezado %}{% endblock %}
+
+<section class="encabezado">
+
+	<nav>
+		<ul class="menu">
+			<a id="link" href='/'>Inicio</a>
+			<a id="link" href='/blog'>Blog</a>
+			<a id="link" href='/forum'>Foros</a>
+			<a id="link" href='/cal'>Calendario</a>
+			<a id="link" href='/usuarios'>Usuarios</a>
+			<a id="link" href='/sobre'>Sobre</a>
+			<a id="link" href='/contacto'>Contactenos</a>
+			{% if not user.is_authenticated %}
+			<a id="link" href='/ingresar'>Ingresar</a>
+			{% endif %}
+			{% if user.is_staff %}
+				<a id="link" href='/admin'>Admin</a>
+			{% endif %}
+		   	{% if user.is_authenticated %}<!-- si el usuario esta autenticado -->
+		   		<a id="link" href='/cerrar/'>Cerrar Sesion</a> 
+		   	{% endif %}
+		   	{% if user.is_staff %}
+		   	<a id="link" href='/usuario/nuevo'>Nuevo Usuario</a>
+		   	{% endif %} {% block header %}{% endblock %}
+		</ul>
+	</nav>
+</section>
+</header>
+
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+<section>
+<p></p>      
+<p></p>
+
+</section>
+<section class="image_intro"><a href="http://agenvida.com"><img src="{{static_url}}img/proxi.png" widht="750" height="327" align="center"></a></section>
+<section>
+<p></p>      
+<p></p>
+
+</section>
+<section class='contenido'>
+		{% block contenido %} {% endblock %}
+	</section>
+	<footer>
+		
+		<p>Proyecto 1 de ejemplo para Agenvida </p>
+		<div>Creado por <a id="link" href="http://twitter.com/GisseJo">@GisseJo</a> y <a id="link" href="http://twitter.com/rodrivaldez5">@rodrivaldez5</a></div>
+
+	</footer>
+</body>
+</html>

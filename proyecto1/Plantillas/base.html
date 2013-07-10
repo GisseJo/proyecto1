@@ -27,6 +27,7 @@
 			<a id="link" href='/usuarios'>Usuarios</a>
 			<a id="link" href='/sobre'>Sobre</a>
 			<a id="link" href='/contacto'>Contactenos</a>
+			<a id="link" href='/photo'>Fotos</a>
 			{% if not user.is_authenticated %}
 			<a id="link" href='/ingresar'>Ingresar</a>
 			{% endif %}
@@ -58,10 +59,10 @@
 		{% block contenido %} {% endblock %}
 	</section>
 	<footer>
-		
+		{% block footer %}
 		<p>Proyecto 1 de ejemplo para Agenvida </p>
 		<div>Creado por <a id="link" href="http://twitter.com/GisseJo">@GisseJo</a> y <a id="link" href="http://twitter.com/rodrivaldez5">@rodrivaldez5</a></div>
-
+{% endblock %}
 	</footer>
 
 

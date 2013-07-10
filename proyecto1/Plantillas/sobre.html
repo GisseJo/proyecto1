@@ -1,0 +1,82 @@
+<! DOCTYPE>
+<html lang='es'>
+<head>
+	<meta charset='utf-8'>
+	<title>Agenvida - {% block titulo %}{% endblock %}</title>
+	<link rel='stylesheet' href='{{STATIC_URL}}css/base.css'>
+	<link rel='shortcut icon' href='{{STATIC_URL}}img/av.png'>
+	<style>
+	{% block style_css %}{% endblock %}
+	</style>
+	<script src='{{STATIC_URL}}js/demo.js/jquery-1.10.1.min.js'></script>
+	<script src='{{STATIC_URL}}js/demo.js/demo.js'></script>
+</head>
+
+<body>
+	<header>
+		{% block encabezado %}{% endblock %}
+
+<section class="encabezado">
+
+	<nav>
+		<ul class="menu">
+			<a id="link" href='/'>Inicio</a>
+			<a id="link" href='/blog'>Blog</a>
+			<a id="link" href='/forum'>Foros</a>
+			<a id="link" href='/cal'>Calendario</a>
+			<a id="link" href='/usuarios'>Usuarios</a>
+			<a id="link" href='/sobre'>Sobre</a>
+			<a id="link" href='/contacto'>Contactenos</a>
+			<a id="link" href='/photo'>Fotos</a>
+			{% if not user.is_authenticated %}
+			<a id="link" href='/ingresar'>Ingresar</a>
+			{% endif %}
+			{% if user.is_staff %}
+				<a id="link" href='/admin'>Admin</a>
+			{% endif %}
+		   	{% if user.is_authenticated %}<!-- si el usuario esta autenticado -->
+		   		<a id="link" href='/cerrar/'>Cerrar Sesion</a> 
+		   	{% endif %}
+		   	{% if user.is_staff %}
+		   	<a id="link" href='/usuario/nuevo'>Nuevo Usuario</a>
+		   	{% endif %}
+		</ul>
+	</nav>
+</section>
+</header>
+<section>
+<p></p>      
+<p></p>
+
+</section>
+<section class="image_intro"><a href="http://agenvida.com"><img src="{{STATIC_URL}}img/logoagenvida.png" widht="750" height="327" align="center"></a></section>
+<section>
+<p></p>      
+<p></p>
+
+</section>
+<section class='contenido'>
+
+<img class="giro" src="{{STATIC_URL}}img/giyro2bd123.jpg">
+<p>Somos Gisse y Rodri, de Paraguay.
+Vimos que entre nuestros conocidos y nosotros también hay una necesidad de tener el horario espiritual (herramienta popular entre los miembros del Movimiento de Schoenstatt) en una versión web. Ya que uno de los mayores "problemas" para completarlo es acordarse y tener el "cuadernito" consigo todo el tiempo.
+
+Esta necesidad más el deseo mutuo de aprender a programar decidimos emprender este proyecto: Agenvida, el horario espiritual en la web. </p>
+
+	</section>
+	<footer>
+		
+		<p>Proyecto 1 de ejemplo para Agenvida </p>
+		<div>Creado por <a id="link" href="http://twitter.com/GisseJo">@GisseJo</a> y <a id="link" href="http://twitter.com/rodrivaldez5">@rodrivaldez5</a></div>
+
+	</footer>
+
+
+
+
+
+</body>
+
+</html>
+
+

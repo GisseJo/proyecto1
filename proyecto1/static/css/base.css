@@ -24,6 +24,14 @@ section.encabezado {
      box-shadow: 2px 2px 2px 1px white;
 }
 
+img.giro {
+
+	width: 300px;
+	vertical-align: center;
+
+
+}
+
 section.contenido {
 
 	text-align: center;
@@ -100,6 +108,18 @@ text-transform: uppercase;
 
 }
 
+div.title {
+
+	background-color: green;
+	border-radius: 10px 10px;
+	font-family: arial, sans-serif;
+	font-size: 15px;
+	padding: 15px 15px 15px 15px;
+	width:20%;
+float:center;
+margin-right: auto;
+margin-left: auto;
+}
 p, h1 {
 
 	color: black;

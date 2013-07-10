@@ -17,8 +17,7 @@ def lista_personas(request):
 	return render_to_response('lista_personas.html',{'lista':personas},context_instance=RequestContext(request))
 
 def sobre(request):
-	html = "<html><body>Estamos experimentando</body></html>"
-	return HttpResponse(html)
+	return render_to_response('sobre.html', context_instance=RequestContext(request))
 
 def inicio(request):
 	historials = historial.objects.all()
@@ -43,8 +42,8 @@ def contacto(request):
 		if formulario.is_valid():
 			titulo ='Mensaje del Historial de Agenvida'
 			contenido = formulario.cleaned_data['mensaje']+ "\n"
-			contenido += 'Comunicarse a' + formulario.cleaned_data['correo']
-			correo = EmailMessage(titulo, contenido, to=['rodri.valdez@gmail.com'])
+			contenido += 'Comunicarse a ' + formulario.cleaned_data['correo']
+			correo = EmailMessage(titulo, contenido, to=['gisse.peralta@gmail.com', 'rodri.valdez@gmail.com'])
 			correo.send()
 			return HttpResponseRedirect('/')
 	else:
