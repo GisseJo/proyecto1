@@ -1,0 +1,25 @@
+{% extends "userprofile/contrato_base.html" %}
+{%block content%}
+
+{%for field in form%}
+
+{{field.error}}
+
+{%endfor %}
+
+<form class="pure-form pure-form-aligned" action="/accounts/contrato/" method="post">
+  <fieldset>
+                    <legend>Mi contrato de autoeducación para este año</legend>
+{% csrf_token%}
+
+{{form.as_ul}}
+<div class="pure-controls">
+                        <label for="cb" class="pure-checkbox">
+                            <input id="cb" type="checkbox">Este contrato pedagógico se sella por un año. A fin de año revisaré las clausulas y decidiré cuales seguir trabajando y que nuevas propondré.
+                        </label>
+
+                      <button type="submit" class="pure-button pure-button-primary">Registrarme</button>
+                    </div>
+                </fieldset>
+              </form>
+{%endblock%}

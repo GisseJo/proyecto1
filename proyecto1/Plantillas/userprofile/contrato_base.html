@@ -1,0 +1,179 @@
+<!DOCTYPE HTML> <!-- Creado por @GisseJo y @RodriValdez5 para @Agenvida -->
+<html lang='es'>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{{STATIC_URL}}css/pure/marketing.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/pure/pure.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/main4.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+   <script type="text/javascript" src="{{STATIC_URL}}js/jquery.js"></script>
+   <script type="text/javascript" src="{{STATIC_URL}}js/jquery-ui.js"></script>
+  <script>
+    $(function() {
+      var pull    = $('#pull');
+        menu    = $('nav ul');
+        menuHeight  = menu.height();
+
+      $(pull).on('click', function(e) {
+        e.preventDefault();
+        menu.slideToggle();
+      });
+
+      $(window).resize(function(){
+            var w = $(window).width();
+            if(w > 320 && menu.is(':hidden')) {
+              menu.removeAttr('style');
+            }
+        });
+    });
+  </script>
+  <style type="text/css">
+   #ui-datepicker-div {
+    font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+  font-size: 70%;
+  width: 15%;
+  top: 205px;
+  }
+  </style>
+  <script type="text/javascript">
+
+  $(function() {
+    $( "#id_fecha_nacimiento" ).datepicker({
+
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "-80: +0",
+      dateFormat: 'yy-mm-dd',
+
+      beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+                top: 205,
+                
+            });
+        }, 0);
+    }
+    });
+
+  });
+  
+  </script>
+  <style type="text/css">
+  .img-sing {
+  float: right;
+  width: 50%;
+  margin-left: 2%;
+  margin-right: 4%;
+}
+
+.pure-form input[type="text"]{
+  height: 50px;
+width: 100%;
+}
+
+.textointro {
+  width: 70%;
+  float: right;
+  margin-right: 8%;
+  text-align: justify;
+  margin-top: 5%;
+}
+
+.pure-form .pure-form-aligned {
+  width: 80%;
+  margin-top: 8%;
+  margin-right: 5%;
+}
+
+.pure-form-aligned .pure-controls {
+  margin: 0px;
+}
+
+.pure-form fieldset {
+  padding: 0px;
+}
+
+  /**600**/
+    @media screen and (max-width: 600px) {  
+      .img-sing {
+        display: none;
+      }       
+
+.textointro {
+  margin-top: 10%;
+  margin-right: 15%;
+}
+
+.pure-form .pure-form-aligned {
+  width: 30%;
+  margin-top: 2%;
+  margin-right: 5%;
+}
+      
+    }  
+
+/**480px o menos**/
+
+    @media only screen and (max-width : 480px) {  
+      .img-sing {
+        display: none;
+      }        
+
+      .pure-form-stacked {
+        
+      }
+    
+    } 
+
+
+    @media only screen and (max-width : 320px) {  
+       .img-sing {
+        display: none;
+      }       
+    }  
+}
+
+  </style>    
+</head>
+
+<body>
+  <nav class="clearfix">  
+        <ul class="clearfix">  
+            <li class="logo"><img class='imagen-logo' src="{{STATIC_URL}}img/agenvidaicono.png" alt="Agenvida"></li>
+            
+            <li><a href="#">Sobre</a></li>  
+            <li><a href="#slider">Blog</a></li>
+            <li><a href="#suscripcion">Suscripcion</a></li>  
+            <li><a href="#suscripcion">Contacto</a></li>  
+            <li><a href="#">Entrar</a></li>  
+        </ul>  
+        <a href="#" id="pull">Menu</a>
+    </nav>
+
+  <div class="splash">
+            <div class="pure-g-r">
+              <div class="pure-u-1-2">
+                <div class="textointro">
+                  <h1>El contrato pedagógico</h1>
+                  <h3>Es un medio pedagógico que se configura sobre la base de actitudes y comportamientos que quieren alcanzarse.</h3>
+                  <p>Es un medio muy apto para concretar el ideal personal y también para ayudarme a descubrirlo.</p>
+                  <p>Como en todo contrato, también en el Contrato Pedagógico la persona asume frente a sí misma, frente a otro o frente a Dios, ciertas obligaciones que quiere cumplir a concienca y con buena fe.</p>
+                  <p>Lo podemos firmar a pirncipios de año, durante un retiro y lo volvemos a revisar cada año. El contrato pedagógico no es "mágico", pero sí muy eficiente, pues se orienta a comportamientos y no a sentimientos o pensamientos.</p>
+                </div>
+              </div>
+              <div class="pure-u-1-2">
+
+                {%block content%}
+                {%endblock%}
+              </div>
+    </div>
+       
+
+    <div class="footer">
+            Agenvida - Creado por @GisseJo y @Rodrivaldez5
+        </div>
+    </div>
+</body>
+</html>

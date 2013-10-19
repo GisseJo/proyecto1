@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- Creado por @GisseJo y @Rodrivaldez5 2013 -->
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{{STATIC_URL}}css/pure/marketing.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/pure/pure.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/main4.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/style.css" type="text/css" media="screen" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>
+    $(function() {
+      var pull    = $('#pull');
+        menu    = $('nav ul');
+        menuHeight  = menu.height();
+
+      $(pull).on('click', function(e) {
+        e.preventDefault();
+        menu.slideToggle();
+      });
+
+      $(window).resize(function(){
+            var w = $(window).width();
+            if(w > 320 && menu.is(':hidden')) {
+              menu.removeAttr('style');
+            }
+        });
+    });
+  </script>
+  <style type="text/css">
+  
+  .img-profile {
+    float: right;
+    width: 25%;
+    margin-left: 2%;
+    margin-right: 4%;
+  }
+
+  .profile {
+    width: 2%;
+    margin-top: 25%;
+    float: right;
+    
+  }
+    /**600**/
+      @media screen and (max-width: 600px) {  
+        .img-sing {
+          display: none;
+        }       
+
+        .pure-form-stacked {
+         margin-top: 10%; 
+        }
+        
+      }  
+
+  /**480px o menos**/
+
+      @media only screen and (max-width : 480px) {  
+        .img-sing {
+          display: none;
+        }        
+
+        .pure-form-stacked {
+          
+        }
+      
+      } 
+
+
+      @media only screen and (max-width : 320px) {  
+         .img-sing {
+          display: none;
+        }       
+      }  
+  }
+
+  </style>    
+</head>
+
+    
+
+
+<body>
+    
+    <nav class="clearfix">  
+        <ul class="clearfix">  
+            <li class="logo"><img class='imagen-logo' src="{{STATIC_URL}}img/agenvidaicono.png" alt="Agenvida"></li>
+            
+            <li><a href="#">Sobre</a></li>  
+            <li><a href="#slider">Blog</a></li>
+            <li><a href="#suscripcion">Suscripcion</a></li>  
+            <li><a href="#suscripcion">Contacto</a></li>  
+            <li><a href="#">Entrar</a></li>  
+        </ul>  
+        <a href="#" id="pull">Menu</a>
+    </nav>
+
+
+    <div class="splash">
+            <div class="pure-g-r">
+              <div class="pure-u-1-2">
+
+
+                <img class="img-profile" src="{{STATIC_URL}}/img/avatar.png">
+                <form class="profile" name="formulario" action="envio.php" method="post" enctype="multipart/form-data"> <!-- cambiar function profile pic-->
+                  <input name="archivo" type="file"> 
+                </form>
+                
+              </div>
+              <div class="pure-u-1-2">
+
+                {%block content%}
+                {%endblock%}
+              <!--<form class="pure-form pure-form-aligned">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="name">Username</label>
+                        <input id="name" type="text" placeholder="Username">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" placeholder="Password">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" type="email" placeholder="Email Address">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="foo">Ideal Personal</label>
+                        <input id="foo" type="text" placeholder="...">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="foo">Otra opcion</label>
+                        <input id="foo" type="text" placeholder="...">
+                    </div>
+
+
+                    <div class="pure-controls">
+                        
+                        <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                    </div>
+                </fieldset>
+              </form>
+            -->
+              </div>
+
+    
+                
+            </div>
+    </div>
+       
+
+    <div class="footer">
+            Agenvida - Creado por @GisseJo y @Rodrivaldez5
+        </div>
+    </div>
+</body>
+</html>
